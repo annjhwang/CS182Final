@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 try:
     xrange
 except:
@@ -9,18 +12,24 @@ def totalvalue(comb):
     for item, wt, val in comb:
         totwt  += wt
         totval += val
-    return (totval, -totwt) if totwt <= 400 else (0, 0)
+    return (totval, -totwt) if totwt <= 2000 else (0, 0)
  
 # this should be the items on the menu 
-items = (
-    ("map", 9, 150), ("compass", 13, 35), ("water", 153, 200), ("sandwich", 50, 160),
-    ("glucose", 15, 60), ("tin", 68, 45), ("banana", 27, 60), ("apple", 39, 40),
-    ("cheese", 23, 30), ("beer", 52, 10), ("suntan cream", 11, 70), ("camera", 32, 30),
-    ("t-shirt", 24, 15), ("trousers", 48, 10), ("umbrella", 73, 40),
-    ("waterproof trousers", 42, 70), ("waterproof overclothes", 43, 75),
-    ("note-case", 22, 80), ("sunglasses", 7, 20), ("towel", 18, 12),
-    ("socks", 4, 50), ("book", 30, 10),
-    )
+
+items = pd.DataFrame.from_csv('burgerkingdata.csv')
+items = items.drop('Food Category', 1)
+items = items.drop('Item Description 2015', 1)
+items = items.drop('Servings Size Text 2015', 1)
+items = items.drop('Menu_Item_ID', 1)
+items = items.drop('Serving Size Unit 2015', 1)
+items = items.drop('Servings Per Item 2015', 1)
+
+names = items['Item_Name'].values
+calories = items['Calories 2015'].values
+protein = items['Protein (g) 2015'].values
+items = zip(names, calories, protein)
+
+print type(items)
  
 def knapsack01_dp(items, limit):
     table = [[0 for w in range(limit + 1)] for j in xrange(len(items) + 1)]
@@ -47,7 +56,8 @@ def knapsack01_dp(items, limit):
     return result
  
  
-bagged = knapsack01_dp(items, 400)
+bagged = knapsack01_dp(items, 2000)
+print bagged
 print("Bagged the following items\n  " +
       '\n  '.join(sorted(item for item,_,_ in bagged)))
 val, wt = totalvalue(bagged)
