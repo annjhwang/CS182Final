@@ -6,16 +6,17 @@ try:
 except:
     xrange = range
  
+# allows user to input maximum caloric intake
+max_calories = input('Enter the maximum amount of calories: ')
+
 def totalvalue(comb):
     ' Totalise a particular combination of items'
     totwt = totval = 0
     for item, wt, val in comb:
         totwt  += wt
         totval += val
-    return (totval, -totwt) if totwt <= 2000 else (0, 0)
+    return (totval, -totwt) if totwt <= max_calories else (0, 0)
  
-# this should be the items on the menu 
-
 items = pd.DataFrame.from_csv('burgerkingdata.csv')
 items = items.drop('Food Category', 1)
 items = items.drop('Item Description 2015', 1)
@@ -56,9 +57,9 @@ def knapsack01_dp(items, limit):
     return result
  
  
-bagged = knapsack01_dp(items, 2000)
+bagged = knapsack01_dp(items, max_calories)
 print bagged
 print("Bagged the following items\n  " +
       '\n  '.join(sorted(item for item,_,_ in bagged)))
 val, wt = totalvalue(bagged)
-print("for a total value of %i and a total weight of %i" % (val, -wt))
+print("for a total grams of protein of %i and a total caloric intake of %i" % (val, -wt))
