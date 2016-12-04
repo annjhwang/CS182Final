@@ -35,7 +35,6 @@ def knapsack(foods, limit):
             else:
                 table[j][w] = max(table[j-1][w],
                                   table[j-1][w-calories] + val)
- 
     best_foods = []
     w = limit
     for j in range(len(foods), 0, -1):
@@ -45,7 +44,6 @@ def knapsack(foods, limit):
             food, calories, val = foods[j-1]
             best_foods.append(foods[j-1])
             w -= calories
- 
     return best_foods
  
 restaurants = [burgerking, elpollo, chickfila, tacobell, subway]
