@@ -18,12 +18,16 @@ def totalvalue(comb):
     return (totval, -tot_calories) if tot_calories <= max_calories else (0, 0)
 
 # importing all the data and cleaning
-burgerking = pd.DataFrame.from_csv('burgerkingdata.csv')
-elpollo = pd.DataFrame.from_csv('elpollodata.csv')
-chickfila = pd.DataFrame.from_csv('chickfiladata.csv')
-tacobell = pd.DataFrame.from_csv('tacobell.csv')
-subway= pd.DataFrame.from_csv('subway.csv')
-
+burgerking = pd.DataFrame.from_csv('burgerking.csv')
+elpollo = pd.DataFrame.from_csv('elpollo.csv')
+chickfila = pd.DataFrame.from_csv('chickfila.csv')
+tacobell = pd.DataFrame.from_csv('tacobelldata.csv')
+subway= pd.DataFrame.from_csv('subwaydata.csv')
+abp = pd.DataFrame.from_csv('ABP.csv')
+pandaexpress = pd.DataFrame.from_csv('pandaexpress.csv')
+panera = pd.DataFrame.from_csv('panera.csv')
+carlsjr = pd.DataFrame.from_csv('carlsjr.csv')
+kfc = pd.DataFrame.from_csv('kfc.csv')
 
 def knapsack(foods, limit):
     table = [[0 for w in range(limit + 1)] for j in xrange(len(foods) + 1)]
@@ -46,8 +50,8 @@ def knapsack(foods, limit):
             w -= calories
     return best_foods
  
-restaurants = [burgerking, elpollo, chickfila, tacobell, subway]
-restaurant_names = ['Burger King', 'El Pollo Loco', 'Chick-Fila-A' , 'Taco Bell', 'Subway']
+restaurants = [burgerking, elpollo, chickfila, tacobell, subway, abp, pandaexpress, panera, carlsjr, kfc]
+restaurant_names = ['Burger King', 'El Pollo Loco', 'Chick-Fila-A' , 'Taco Bell', 'Subway', 'Au Bon Pain', 'Panda Express', 'Panera Bread', 'Carls Jr', 'KFC']
 
 for restaurant, name in zip(restaurants, restaurant_names):
     names = restaurant['Item_Name'].values
