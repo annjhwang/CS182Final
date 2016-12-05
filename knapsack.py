@@ -1,3 +1,7 @@
+# ***Temporary Title Here***
+# A CS182 Final Project
+# Jason Cui | jasoncui@college.harvard.edu
+# Annie Hwang | annhwang@college.harvard.edu
 import pandas as pd
 import numpy as np
 
