@@ -28,7 +28,6 @@ chickfila = pd.DataFrame.from_csv('chickfiladata.csv')
 tacobell = pd.DataFrame.from_csv('tacobell.csv')
 subway= pd.DataFrame.from_csv('subway.csv')
 
-
 def knapsack(foods, limit):
     table = [[0 for w in range(limit + 1)] for j in xrange(len(foods) + 1)]
     for j in xrange(1, len(foods) + 1):
