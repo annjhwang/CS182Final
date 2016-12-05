@@ -1,3 +1,7 @@
+# ***Temporary Title Here***
+# A CS182 Final Project
+# Jason Cui | jasoncui@college.harvard.edu
+# Annie Hwang | annhwang@college.harvard.edu
 import pandas as pd
 import numpy as np
 
@@ -18,6 +22,7 @@ def totalvalue(comb):
     return (totval, -tot_calories) if tot_calories <= max_calories else (0, 0)
 
 # importing all the data and cleaning
+<<<<<<< HEAD
 burgerking = pd.DataFrame.from_csv('burgerking.csv')
 elpollo = pd.DataFrame.from_csv('elpollo.csv')
 chickfila = pd.DataFrame.from_csv('chickfila.csv')
@@ -28,6 +33,13 @@ pandaexpress = pd.DataFrame.from_csv('pandaexpress.csv')
 panera = pd.DataFrame.from_csv('panera.csv')
 carlsjr = pd.DataFrame.from_csv('carlsjr.csv')
 kfc = pd.DataFrame.from_csv('kfc.csv')
+=======
+burgerking = pd.DataFrame.from_csv('burgerkingdata.csv')
+elpollo = pd.DataFrame.from_csv('elpollodata.csv')
+chickfila = pd.DataFrame.from_csv('chickfiladata.csv')
+tacobell = pd.DataFrame.from_csv('tacobell.csv')
+subway= pd.DataFrame.from_csv('subway.csv')
+>>>>>>> fadfa7047129de1572e89d26c0bb142fbeef917f
 
 def knapsack(foods, limit):
     table = [[0 for w in range(limit + 1)] for j in xrange(len(foods) + 1)]
