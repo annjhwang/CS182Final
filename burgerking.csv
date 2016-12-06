@@ -1,0 +1,117 @@
+"Restaurant","Food Category","Item_Name","Item Description 2015","Servings Per Item 2015","Serving Size 2015","Serving Size Unit 2015","Servings Size Text 2015","Calories 2015","Total Fat (g) 2015","Carbohydrates (g) 2015","Sugar (g) 2015","Protein (g) 2015",Menu_Item_ID
+"Burger King",Burgers,"A1 Ultimate Bacon Cheeseburger","A1 Ultimate Bacon Cheeseburger on an Artisan Bun w/ 2 1/4 lb Patties, Smoked Bacon, American Cheese, Onions & A1 Steak Sauce, Flame Broiled Burgers",,301,g,,850,51,43,8,41,91352
+"Burger King",Burgers,"Bacon Cheeseburger","Bacon Cheeseburger on a Toasted Sesame Seed Bun w/ Beef Patty, Smoked Bacon, American Cheese, Crinkle Cut Pickles, Yellow Mustard & Ketchup, Flame Broiled Burgers, King Deals Value Menu",,112,g,,290,13,27,7,12,11442
+"Burger King",Burgers,"Bacon Cheeseburger Deluxe","Bacon Cheeseburger Deluxe on a Toasted Sesame Seed Bun w/ Beef Patty, Juicy Tomatoes, Fresh Cut Lettuce, Smoked Bacon, Crunchy Pickles, Sliced White Onions & American Cheese, Flame Broiled Burgers, King Deals Value Menu",,147,g,,290,14,28,7,12,91354
+"Burger King",Burgers,"Bacon Double Cheeseburger","Bacon Double Cheeseburger on a Toasted Sesame Seed Bun w/ 2 Beef Patties, Smoked Bacon, American Cheese, Crinkle Cut Pickles, Yellow Mustard & Ketchup, Flame Broiled Burgers, King Deals Value Menu",,148,g,,390,21,27,7,17,11474
+"Burger King",Burgers,"Big King Sandwich","Big King Sandwich on a Toasted Sesame Seed Bun w/ 2 Beef Patties, American Cheese, Iceberg Lettuce, Onions, Pickles & Thousand Island Dressing, Flame Broiled Burgers",,198,g,,530,31,38,8,19,60360
+"Burger King",Burgers,"BK Veggie Burger","BK Veggie Burger on a Sesame Seed Bun w/ Lettuce, Tomatoes, Onions & Ketchup w/out Mayo, Chicken & More, also called Morningstar Veggie Burger",,197,g,,320,8,43,9,21,11464
+"Burger King",Burgers,"BK Veggie Burger w/ Mayo","BK Veggie Burger on a Sesame Seed Bun w/ Mayo, Tomatoes, Onion, Lettuce & Ketchup, Chicken & More, also called Morningstar Veggie Burger",,214,g,,390,16,44,9,21,797
+"Burger King",Burgers,Cheeseburger,"Cheeseburger on a Sesame Seed Bun w/ American Cheese, Crinkle Cut Pickles, Yellow Mustard & Ketchup, Flame Broiled Burgers, Entrees, Kids Meals, Kids & Adults, King Deals Value Menu",,111,g,,270,12,27,7,11,8
+"Burger King",Burgers,"Double Cheeseburger","Double Cheeseburger on a Toasted Sesame Seed Bun w/ 2 Beef Patties, American Cheese, Crinkle Cut Pickles, Yellow Mustard & Ketchup, Flame Broiled Burgers, King Deals Value Menu",,142,g,,360,19,27,7,16,14
+"Burger King",Burgers,"Double Hamburger","Double Hamburger, Flame Broiled Burgers",,128,g,,320,15,26,6,14,12
+"Burger King",Burgers,"Double Whopper Sandwich","Double Whopper Sandwich on a Sesame Seed Bun w/ Tomatoes, Lettuce, Onions, Ketchup & Pickles w/out Mayo, Whopper Sandwiches",,353,g,,770,41,50,12,35,11489
+"Burger King",Burgers,"Double Whopper Sandwich w/ Cheese","Double Whopper Sandwich on a Sesame Seed Bun w/ Cheese, Tomatoes, Lettuce, Onions, Ketchup & Pickles w/out Mayo, Whopper Sandwiches",,376,g,,850,48,51,13,39,11488
+"Burger King",Burgers,"Double Whopper Sandwich w/ Cheese & Mayo","Double Whopper Sandwich on a Sesame Seed Bun w/ Cheese, Mayo, Tomatoes, Lettuce, Onions, Ketchup & Pickles, Whopper Sandwiches",,421,g,,1070,70,52,14,44,27
+"Burger King",Burgers,"Double Whopper Sandwich w/ Mayo","Double Whopper Sandwich on a Sesame Seed Bun w/ Mayo, Tomatoes, Lettuce, Onions, Ketchup & Pickles, Whopper Sandwiches",,375,g,,900,56,50,12,35,25
+"Burger King",Burgers,"Extra Long BBQ Cheeseburger","Extra Long BBQ Cheeseburger on a Toasted Hoagie Bun w/ Beef Patty, Onion Rings, American Cheese & BBQ Sauce, Flame Broiled Burgers",,202,g,,590,27,62,14,22,91353
+"Burger King",Burgers,"Four Cheese Whopper","Four Cheese Whopper on a Sesame Seed Bun w/ 1/4 lb Patty, American Cheese, Three Cheese Creamy Blend, Cheddar Sauce, Lettuce, Juicy Tomatoes & Onions, Whopper Sandwiches",,308,g,,850,57,47,9,32,91351
+"Burger King",Burgers,Hamburger,"Hamburger on Sesame Seed Bun w/ Fire Grilled Patty, Pickles, Mustard & Ketchup, Flame Broiled Burgers, Kids & Adults Menu, Kids Entree",,100,g,,230,9,26,6,9,7
+"Burger King",Burgers,"King Jr Cheeseburger","King Jr Cheeseburger, Flame Broiled Burgers, King Deals Value Menu",,127,g,,310,17,26,5,11,91355
+"Burger King",Burgers,"Rodeo Burger","Rodeo Burger on a Toasted Sesame Seed Bun w/ Beef Patty, Sweet & Smoky BBQ Sauce & Crispy Golden Onion Rings, King Deals Value Menu",,111,g,,310,13,38,9,9,60364
+"Burger King",Burgers,"Triple Whopper Sandwich","Triple Whopper Sandwich on a Sesame Seed Bun w/ Tomatoes, Lettuce, Onions, Ketchup & Pickles w/out Mayo, Whopper Sandwiches",,434,g,,1020,60,49,12,48,11519
+"Burger King",Burgers,"Triple Whopper Sandwich w/ Mayo","Triple Whopper Sandwich on a Sesame Seed Bun w/ Mayo, Tomatoes, Lettuce, Onions, Ketchup & Pickles, Whopper Sandwiches",,455,g,,1160,75,50,12,49,29
+"Burger King",Burgers,"Whopper Jr Sandwich","Whopper Jr Sandwich on a Sesame Seed Bun w/ Tomatoes, Lettuce, Onions, Ketchup & Pickles w/out Mayo, Whopper Sandwiches",,131,g,,240,10,27,6,10,11525
+"Burger King",Burgers,"Whopper Jr Sandwich w/ Cheese","Whopper Jr Sandwich on a Sesame Seed Bun w/ Cheese, Tomatoes, Lettuce, Onions, Ketchup & Pickles w/out Mayo, Whopper Sandwiches",,132,g,,280,13,27,7,12,11523
+"Burger King",Burgers,"Whopper Jr Sandwich w/ Cheese & Mayo","Whopper Jr Sandwich w/ Cheese & Mayo, Ketchup, Pickles, Onions & Beef Patty, Whopper Sandwiches",,153,g,,350,21,28,7,12,80833
+"Burger King",Burgers,"Whopper Jr Sandwich w/ Mayo","Whopper Jr Sandwich on a Sesame Seed Bun w/ Mayo, Tomatoes, Lettuce, Onions, Ketchup & Pickles, Whopper Sandwiches",,138,g,,300,16,27,7,9,11
+"Burger King",Burgers,"Whopper Sandwich","Whopper Sandwich on a Sesame Seed Bun w/ Tomatoes, Lettuce, Onions, Ketchup & Pickles w/out Mayo, Whopper Sandwiches",,268,g,,510,22,50,12,22,11529
+"Burger King",Burgers,"Whopper Sandwich w/ Cheese","Whopper Sandwich on a Sesame Seed Bun w/ Cheese, Tomatoes, Lettuce, Onions, Ketchup & Pickles w/out Mayo, Whopper Sandwiches",,314,g,,680,36,52,13,30,11528
+"Burger King",Burgers,"Whopper Sandwich w/ Cheese & Mayo","Whopper Sandwich on a Sesame Seed Bun w/ Cheese, Mayo, Tomatoes, Lettuce, Onions, Ketchup & Pickles, Whopper Sandwiches",,312,g,,730,44,51,13,26,21
+"Burger King",Burgers,"Whopper Sandwich w/ Mayo","Whopper Sandwich on a Sesame Seed Bun w/ Mayo, Tomatoes, Lettuce, Onions, Ketchup & Pickles, Whopper Sandwiches",,290,g,,650,37,50,12,22,18
+"Burger King",Entrees,"10 Chicken Nuggets","10 Chicken Nuggets, Chicken & More; Choice of Adding: Dipping Sauces",,175,g,"10 Pieces",470,29,34,0,21,29249
+"Burger King",Entrees,"	2 Home-Style Chicken Strips","	2 Home-Style Chicken Strips, Entrees, Kids Meals",,90,g,,230,11,18,0,15,29244
+"Burger King",Entrees,"3 Buffalo Chicken Strips","3 Buffalo Chicken Strips, Chicken & More; Choice of Adding: Ranch",,163,g,"3 Strips",380,20,27,0,22,91365
+"Burger King",Entrees,"3 Chicken Strips","3 Chicken Strips, Chicken & More; Choice of Adding: Dipping Sauce",,135,g,,340,17,26,0,22,29245
+"Burger King",Entrees,"3 French Toast Sticks","3 French Toast Sticks, Breakfast; Choice of Adding: Sweet Syrup",,65,g,"3 Pieces",230,11,29,8,3,3782
+"Burger King",Entrees,"3 Honey BBQ Chicken Strips","3 Honey BBQ Chicken Strips, Chicken & More",,178,g,"3 Strips",410,17,42,13,22,91367
+"Burger King",Entrees,"3 Pancakes","3 Pancakes w/ 1 oz Breakfast Syrup, Breakfast",,187,g,,490,16,82,36,5,11566
+"Burger King",Entrees,"4 Chicken Nuggets","4 Chicken Nuggets, Chicken & More, Entrees, Kids Meals, Kids & Adults, King Deals Value Menu; Choice of Adding: Dipping Sauces",,70,g,"4 Pieces",190,11,13,0,8,29247
+"Burger King",Entrees,"5 Buffalo Chicken Strips","5 Buffalo Chicken Strips, Chicken & More; Choice of Adding: Ranch",,268,g,"5 Strips",620,33,45,1,37,91366
+"Burger King",Entrees,"5 Chicken Strips","5 Chicken Strips, Chicken & More; Choice of Adding: Dipping Sauce",,225,g,,570,28,44,0,36,29246
+"Burger King",Entrees,"5 French Toast Sticks","5 French Toast Sticks, Breakfast; Choice of Adding: Sweet Syrup",,109,g,"5 Pieces",380,18,49,13,5,3783
+"Burger King",Entrees,"5 Honey BBQ Chicken Strips","5 Honey BBQ Chicken Strips, Chicken & More",,289,g,"5 Strips",690,28,72,25,37,91368
+"Burger King",Entrees,"6 Chicken Nuggets","6 Chicken Nuggets, Chicken & More, Entrees, Kids Meals, Kids & Adults; Choice of Adding: Dipping Sauces",,105,g,"6 Pieces",280,17,20,0,13,29248
+"Burger King",Entrees,"BK Ultimate Breakfast Platter","BK Ultimate Breakfast Platter w/ Hash Rounds, Eggs, Bacon, Sausage, Biscuit, Pancake & Breakfast Syrup, Breakfast",,511,g,,1420,79,139,41,36,11542
+"Burger King",Entrees,"Fruit Topped Maple Flavored Quaker Oatmeal","Fruit Topped Maple Flavored Quaker Oatmeal, Breakfast",,"	-"," ",,270,20,55,32,5,29322
+"Burger King",Entrees,"Kids Oatmeal","Kids Oatmeal, Entrees, Kids Meals; Choice of Adding: Dried Fruit Topping",,167,g,,170,3,32,12,4,11557
+"Burger King",Entrees,"Pancake & Sausage Platter","Pancake & Sausage Platter, Breakfast",,231,g,,660,31,83,36,13,11565
+"Burger King",Entrees,"Quaker Oatmeal Maple Flavor","Quaker Oatmeal Maple Flavor, Breakfast",,172,g,,170,3,32,12,4,60366
+"Burger King","Fried Potatoes","French Fries, Salted, Large","French Fries, Salted, Large, BK Garden Fresh Salads & Sides",,190,g,,500,22,72,0,5,1553
+"Burger King","Fried Potatoes","French Fries, Salted, Medium","French Fries, Salted, Medium, BK Garden Fresh Salads & Sides",,153,g,,410,18,58,0,4,1551
+"Burger King","Fried Potatoes","French Fries, Salted, Small","French Fries, Salted, Small, BK Garden Fresh Salads & Sides",,128,g,,340,15,49,0,4,1549
+"Burger King","Fried Potatoes","French Fries, Value, Salted","French Fries, Value, Salted, BK Garden Fresh Salads & Sides",,89,g,,240,10,34,0,2,1547
+"Burger King","Fried Potatoes","Hash Browns, Large","Hash Browns, Breakfast, Large",,224,g,,670,44,65,0,5,1648
+"Burger King","Fried Potatoes","Hash Browns, Medium","Hash Browns, Breakfast, Medium",,168,g,,500,33,48,0,4,1646
+"Burger King","Fried Potatoes","Hash Browns, Small","Hash Browns, Breakfast, Small",,84,g,,250,16,24,0,2,1645
+"Burger King","Fried Potatoes","Satisfries French Fries, Large, Salted","Satisfries French Fries, Large, Salted, BK Garden Fresh Salads & Sides",,191,g,,410,17,62,0,5,60378
+"Burger King","Fried Potatoes","Satisfries French Fries, Medium, Salted","Satisfries French Fries, Medium, Salted, BK Garden Fresh Salads & Sides",,157,g,,340,14,51,0,4,60375
+"Burger King","Fried Potatoes","Satisfries French Fries, Small, Salted","Satisfries French Fries, Small, Salted, BK Garden Fresh Salads & Sides",,127,g,,270,11,41,0,4,60377
+"Burger King","Fried Potatoes","Satisfries French Fries, Value, Salted","Satisfries French Fries, Value, Salted, Side Items, Kids Meals, BK Garden Fresh Salads & Sides, Kids & Adults",,87,g,,190,8,28,0,2,60376
+"Burger King",Salads,"Chicken Apple & Cranberry Garden Fresh Salad w/ Tendercrisp","Chicken Apple & Cranberry Garden Fresh Salad w/ Tendercrisp, Sweet Dried Cranberries, Blue Cheese Crumbles, Apple Slices, Lettuce & Ken's Apple Cider Vinaigrette, BK Garden Fresh Salads & Sides",,394,g,,680,42,53,36,24,29255
+"Burger King",Salads,"Chicken Apple & Cranberry Garden Fresh Salad w/ Tendergrill","Chicken Apple & Cranberry Garden Fresh Salad w/ Tendergrill, Sweet Dried Cranberries, Blue Cheese Crumbles, Apple Slices, Lettuce & Ken's Apple Cider Vinaigrette, BK Garden Fresh Salads & Sides",,363,g,,480,26,34,34,28,29254
+"Burger King",Salads,"Chicken BLT Garden Fresh Salad w/ Tendercrisp & Dressing","Chicken BLT Garden Fresh Salad w/ Tendercrisp & Dressing, BK Garden Fresh Salads & Sides",,390,g,,640,45,30,8,28,29252
+"Burger King",Salads,"Chicken BLT Garden Fresh Salad w/ Tendergrill & Dressing","Chicken BLT Garden Fresh Salad w/ Tendergrill & Dressing, BK Garden Fresh Salads & Sides",,357,g,,440,29,11,5,33,29253
+"Burger King",Salads,"Chicken Caesar Garden Fresh Salad w/ Tendercrisp","Chicken Caesar Garden Fresh Salad w/ Tendercrisp, Croutons, Parmesan Cheese, Tomatoes, Romaine Lettuce & Ken's Citrus Caesar Vinaigrette, BK Garden Fresh Salads & Sides",,380,g,,650,43,39,8,30,29240
+"Burger King",Salads,"Chicken Caesar Garden Fresh Salad w/ Tendergrill","Chicken Caesar Garden Fresh Salad w/ Tendergrill, Croutons, Parmesan Cheese, Tomatoes, Romaine Lettuce & Ken's Citrus Caesar Vinaigrette, BK Garden Fresh Salads & Sides",,348,g,,450,27,20,6,35,29251
+"Burger King",Salads,"Side Caesar Salad w/ Dressing","Side Caesar Salad w/ Dressing, BK Garden Fresh Salads & Sides",,190,g,,290,22,17,5,8,29241
+"Burger King",Salads,"Side Garden Salad w/ Avocado Ranch Dressing","Side Garden Salad w/ Avocado Ranch Dressing, BK Garden Fresh Salads & Sides",,169,g,,240,22,6,2,6,29256
+"Burger King",Sandwiches,"Bacon, Egg & Cheese Biscuit","Bacon, Egg & Cheese Biscuit, Breakfast",,161,g,,450,27,33,4,16,880
+"Burger King",Sandwiches,"Big Fish Sandwich","Big Fish Sandwich on an Artisan Style Bun w/ Lettuce & Pickles w/out Tartar Sauce, Chicken & More",,169,g,,350,9,51,5,17,60385
+"Burger King",Sandwiches,"Big Fish Sandwich w/ Tartar Sauce","Big Fish Sandwich on an Artisan Style Bun w/ Tartar Sauce, Lettuce & Pickles, Chicken & More",,198,g,,530,27,54,7,17,60386
+"Burger King",Sandwiches,"BK Breakfast Muffin Sandwich, Bacon, Egg & Cheese","BK Breakfast Muffin Sandwich, Bacon, Egg & Cheese, Breakfast",,133,g,,300,14,27,3,15,29277
+"Burger King",Sandwiches,"BK Breakfast Muffin Sandwich, Egg & Cheese","BK Breakfast Muffin Sandwich, Egg & Cheese, Breakfast",,125,g,,260,11,27,3,13,11456
+"Burger King",Sandwiches,"BK Breakfast Muffin Sandwich, Ham, Egg & Cheese","BK Breakfast Muffin Sandwich, Ham, Egg & Cheese, Breakfast",,159,g,,310,13,29,4,18,29276
+"Burger King",Sandwiches,"BK Breakfast Muffin Sandwich, Sausage & Cheese","BK Breakfast Muffin Sandwich, Sausage & Cheese, Breakfast",,124,g,,390,23,27,2,17,29274
+"Burger King",Sandwiches,"BK Breakfast Muffin Sandwich, Sausage, Egg & Cheese","BK Breakfast Muffin Sandwich, Sausage, Egg & Cheese, Breakfast",,169,g,,430,26,28,3,20,29275
+"Burger King",Sandwiches,"Chicken Apple & Cranberry Garden Fresh Salad Wrap, Crispy","Chicken Apple & Cranberry Garden Fresh Salad Wrap, Crispy, BK Garden Fresh Salads & Sides",,212,g,,490,24,53,18,16,29264
+"Burger King",Sandwiches,"Chicken Apple & Cranberry Garden Fresh Salad Wrap, Grilled","Chicken Apple & Cranberry Garden Fresh Salad Wrap, Grilled, BK Garden Fresh Salads & Sides",,225,g,,400,16,48,20,19,29263
+"Burger King",Sandwiches,"Chicken BLT Garden Fresh Salad Wrap, Crispy","Chicken BLT Garden Fresh Salad Wrap, Crispy, BK Garden Fresh Salads & Sides",,202,g,,470,26,42,4,19,29262
+"Burger King",Sandwiches,"Chicken BLT Garden Fresh Salad Wrap, Grilled","Chicken BLT Garden Fresh Salad Wrap, Grilled, BK Garden Fresh Salads & Sides",,191,g,,380,19,33,3,22,29261
+"Burger King",Sandwiches,"Chicken Caesar Garden Fresh Salad Wrap, Crispy","Chicken Caesar Garden Fresh Salad Wrap, Crispy, BK Garden Fresh Salads & Sides",,191,g,,440,24,42,4,18,29266
+"Burger King",Sandwiches,"Chicken Caesar Garden Fresh Salad Wrap, Grilled","Chicken Caesar Garden Fresh Salad Wrap, Grilled, BK Garden Fresh Salads & Sides",,174,g,,340,16,33,3,21,29265
+"Burger King",Sandwiches,"Country Ham & Egg Biscuit","Country Ham & Egg Biscuit, Breakfast",,181,g,,440,26,33,4,18,29279
+"Burger King",Sandwiches,"Crispy Chicken Jr","Crispy Chicken Jr on a Sesame Seed Bun w/ Chopped Lettuce & Creamy Mayonnaise, Chicken & More, King Deals Value Menu",,142,g,,430,28,34,4,12,29243
+"Burger King",Sandwiches,"Croissan'wich Bacon, Egg & Cheese","Croissan'wich Bacon, Egg & Cheese, Breakfast",,128,g,,370,21,31,6,13,876
+"Burger King",Sandwiches,"Croissan'wich Egg & Cheese","Croissan'wich Egg & Cheese, Breakfast",,121,g,,330,18,31,5,11,874
+"Burger King",Sandwiches,"Croissan'wich Ham, Egg & Cheese","Croissan'wich Ham, Egg & Cheese, Breakfast",,155,g,,390,20,33,7,17,879
+"Burger King",Sandwiches,"Croissan'wich Sausage & Cheese","Croissan'wich Sausage & Cheese, Breakfast",,112,g,,420,27,31,4,14,873
+"Burger King",Sandwiches,"Croissan'wich Sausage, Egg & Cheese","Croissan'wich Sausage, Egg & Cheese, Breakfast",,165,g,,500,33,32,5,19,881
+"Burger King",Sandwiches,"Double Croissan'wich w/ Bacon, Egg & Cheese","Double Croissan'wich w/ Bacon, Egg & Cheese, Breakfast",,148,g,,440,27,32,6,17,878
+"Burger King",Sandwiches,"Double Croissan'wich w/ Double Sausage","Double Croissan'wich w/ Double Sausage, Breakfast",,"	-"," ",,630,45,32,4,24,11483
+"Burger King",Sandwiches,"Double Croissan'wich w/ Ham & Sausage","Double Croissan'wich w/ Ham & Sausage, Breakfast",,"	-"," ",,600,39,35,7,27,60394
+"Burger King",Sandwiches,"Double Croissan'wich w/ Ham, Bacon, Egg & Cheese","Double Croissan'wich w/ Ham, Bacon, Egg & Cheese, Breakfast",,177,g,,470,27,34,7,21,883
+"Burger King",Sandwiches,"Double Croissan'wich w/ Ham, Egg & Cheese","Double Croissan'wich w/ Ham, Egg & Cheese, Breakfast",,200,g,,480,26,36,9,25,29278
+"Burger King",Sandwiches,"Double Croissan'wich w/ Ham, Sausage, Egg & Cheese","Double Croissan'wich w/ Ham, Sausage, Egg & Cheese, Breakfast",,214,g,,600,39,35,7,27,887
+"Burger King",Sandwiches,"Double Croissan'wich w/ Sausage & Bacon","Double Croissan'wich w/ Sausage & Bacon, Breakfast",,"	-"," ",,490,32,31,5,18,29326
+"Burger King",Sandwiches,"Double Croissan'wich w/ Sausage, Bacon, Egg & Cheese","Double Croissan'wich w/ Sausage, Bacon, Egg & Cheese, Breakfast",,186,g,,580,39,33,6,23,884
+"Burger King",Sandwiches,"Double Croissan'wich w/ Sausage, Egg & Cheese","Double Croissan'wich w/ Sausage, Egg & Cheese, Breakfast",,273,g,,790,57,35,7,34,888
+"Burger King",Sandwiches,"Ham, Egg & Cheese Biscuit","Ham, Egg & Cheese Biscuit, Breakfast",,180,g,,430,23,35,6,18,882
+"Burger King",Sandwiches,"Honey Mustard Crispy Chicken Wrap","Honey Mustard Crispy Chicken Wrap, BK Garden Fresh Salads & Sides",,137,g,,380,20,35,6,15,29259
+"Burger King",Sandwiches,"Honey Mustard Grilled Chicken Wrap","Honey Mustard Grilled Chicken Wrap, Garden Fresh Salads & Sides",,135,g,,330,16,26,6,19,29260
+"Burger King",Sandwiches,"Original Chicken Sandwich","Original Chicken Sandwich on a Toasted Hoagie Bun w/ Lettuce w/out Mayo, Chicken & More",,190,g,,450,16,52,7,28,11499
+"Burger King",Sandwiches,"Original Chicken Sandwich w/ Mayo","Original Chicken Sandwich on a Toasted Hoagie Bun w/ Mayo & Lettuce, Chicken & More",,218,g,,640,36,53,7,29,280
+"Burger King",Sandwiches,"Ranch Crispy Chicken Wrap","Ranch Crispy Chicken Wrap, BK Garden Fresh Salads & Sides",,137,g,,360,20,30,1,15,29257
+"Burger King",Sandwiches,"Ranch Grilled Chicken Wrap","Ranch Grilled Chicken Wrap, BK Garden Fresh Salads & Sides",,135,g,,310,16,21,1,19,29258
+"Burger King",Sandwiches,"Rodeo Crispy Chicken Sandwich","Rodeo Crispy Chicken Sandwich on a Sesame Seed Bun w/ Sweet & Smoky BBQ Sauce & Crispy Onion Rings, King Deals Value Menu, also called Rodeo Chicken Sandwich, Value Menu",,154,g,,410,17,53,14,12,60392
+"Burger King",Sandwiches,"Sausage Biscuit","Sausage Biscuit, Breakfast",,126,g,,420,27,32,3,13,877
+"Burger King",Sandwiches,"Sausage Breakfast Burrito","Sausage Breakfast Burrito w/ Eggs, Sausage & American Cheese in a Tortilla, Breakfast",,123,g,,310,19,22,2,14,29271
+"Burger King",Sandwiches,"Sausage, Egg & Cheese Biscuit","Sausage, Egg & Cheese Biscuit, Breakfast",,190,g,,550,36,34,4,20,885
+"Burger King",Sandwiches,"Southwestern Breakfast Burrito","Southwestern Breakfast Burrito, Breakfast",,223,g,,600,38,43,4,23,29272
+"Burger King",Sandwiches,"Spicy Crispy Chicken Jr","Spicy Crispy Chicken Jr on a Sesame Seed Bun w/ Chopped Lettuce & Creamy Spicy Sauce, Chicken & More, King Deals Value Menu",,142,g,,410,25,35,5,12,278
+"Burger King",Sandwiches,"Spicy Original Chicken Sandwich","Spicy Original Chicken Sandwich on a Toasted Hoagie Bun w/ Lettuce w/out Mayo, Chicken & More",,184,g,,460,17,56,7,23,60387
+"Burger King",Sandwiches,"Spicy Original Chicken Sandwich w/ Mayo","Spicy Original Chicken Sandwich on a Toasted Hoagie Bun w/ Mayo & Lettuce, Chicken & More",,212,g,,640,38,57,7,23,60388
+"Burger King",Sandwiches,"Tendercrisp Chicken Sandwich","Tendercrisp Chicken Sandwich on an Artisan Style Bun w/ Tomatoes & Lettuce w/out Mayo, Chicken & More",,222,g,,460,16,52,7,27,11510
+"Burger King",Sandwiches,"Tendercrisp Chicken Sandwich w/ Mayo","Tendercrisp Chicken Sandwich on an Artisan Style Bun w/ Mayo, Tomatoes & Lettuce, Chicken & More",,250,g,,640,36,52,8,28,284
+"Burger King",Sandwiches,"Tendergrill Chicken Sandwich","Tendergrill Chicken Sandwich on an Artisan Style Bun w/ Lettuce & Tomatoes w/out Mayo, Chicken & More",,195,g,,320,5,38,6,31,11513
+"Burger King",Sandwiches,"Tendergrill Chicken Sandwich w/ Mayo","Tendergrill Chicken Sandwich on an Artisan Style Bun w/ Mayo, Tomatoes & Lettuce, Chicken & More",,209,g,,410,16,38,6,31,282
+"Burger King",Sandwiches,"YUMBO Hot Ham & Cheese Sandwich","YUMBO Hot Ham & Cheese Sandwich on a Toasted Hoagie Bun w/ Black Forest Ham, American Cheese, Lettuce & Mayonnaise, Chicken & More",,196,g,,490,24,49,10,23,91372
