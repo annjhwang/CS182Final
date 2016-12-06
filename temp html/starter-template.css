@@ -1,7 +1,16 @@
 body {
   padding-top: 50px;
 }
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
+}
+
+.form {
+	margin-top: 10px;
+}
+
+.submit {
+	margin-top: 10px;
 }

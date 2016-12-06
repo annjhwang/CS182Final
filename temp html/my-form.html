@@ -51,14 +51,21 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Project Title Here</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+
+        <div class="jumbotron">
+          <h1>CS182 Final Project</h1> 
+          <p>Instantly find recommendations for popular restaurant dishes based on your nutritional needs. As simple as that!</p> 
+        </div>
+
+        <p class="lead">Step 1: Enter your daily caloric limit.</p>
 
         <form>
-          <div class="form-group col-xs-4 col-xs-offset-4">
+          <div class="form-group col-xs-4 col-xs-offset-4 form">
             <label for="exampleInputEmail1">Daily Caloric Limit</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="i.e. 2000 calories">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="i.e. 2000 calories.">
+            <small id="emailHelp" class="form-text text-muted">Enter the caloric limit you do not wish to exceed.</small>
+            <br>
+            <button type="submit" class="btn btn-primary submit ">Submit</button>
           </div>
         </form>
       </div>
