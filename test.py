@@ -43,8 +43,8 @@ def my_form_post():
 
     def totalvalue(comb):
 	    tot_nutrients = totval = 0
-	    for item, calories, val in comb:
-	        tot_nutrients  += calories
+	    for item, nutrient, val in comb:
+	        tot_nutrients  += nutrient
 	        totval += val
 	    return (totval, -tot_nutrients) if tot_nutrients <= nutrient_capacity else (0, 0)
 
