@@ -35,53 +35,55 @@ def my_form(name=None):
 
 @app.route('/', methods=['POST'])
 def my_form_post():
-
-    text = request.form['text']
-    max_calories = int(text)
+    #nutrient_type = str(request.form['nutrient'])
+    nutrient_type ='Carbohydrates'
+    capacity = request.form['capacity']
+    #print nutrient
+    nutrient_capacity = int(capacity)
 
     def totalvalue(comb):
-	    tot_calories = totval = 0
+	    tot_nutrients = totval = 0
 	    for item, calories, val in comb:
-	        tot_calories  += calories
+	        tot_nutrients  += calories
 	        totval += val
-	    return (totval, -tot_calories) if tot_calories <= max_calories else (0, 0)
+	    return (totval, -tot_nutrients) if tot_nutrients <= nutrient_capacity else (0, 0)
 
 	 
 	# DYNAMIC PROGRAMMING APPROACH
     def knapsack_dp(foods, limit):
 	    table = [[0 for w in range(limit + 1)] for j in xrange(len(foods) + 1)]
 	    for j in xrange(1, len(foods) + 1):
-	        food, calories, val = foods[j-1]
+	        food, nutrient, val = foods[j-1]
 	        for w in xrange(1, limit + 1):
-	            if calories > w:
+	            if nutrient> w:
 	                table[j][w] = table[j-1][w]
 	            else:
 	                table[j][w] = max(table[j-1][w],
-	                                  table[j-1][w-calories] + val)
+	                                  table[j-1][w-nutrient] + val)
 	    best_foods = []
 	    w = limit
 	    for j in range(len(foods), 0, -1):
 	        was_added = table[j][w] != table[j-1][w]
 	 
 	        if was_added:
-	            food, calories, val = foods[j-1]
+	            food, nutrient, val = foods[j-1]
 	            best_foods.append(foods[j-1])
-	            w -= calories
+	            w -= nutrient
 	    return best_foods
 
 
     answer = ' '
     for restaurant, name in zip(restaurants, restaurant_names):
 	    names = restaurant['Item_Name'].values
-	    calories = restaurant['Calories 2015'].values
-	    protein = restaurant['Protein (g) 2015'].values
-	    items = zip(names, calories, protein)
+	    chosen_nutrient = [int(x) for x in restaurant[nutrient_type].values]
+	    protein = restaurant['Protein'].values
+	    items = zip(names, chosen_nutrient, protein)
 	    # knapsack problem for burgerking 
-	    bagged = knapsack_dp(items, max_calories)
+	    bagged = knapsack_dp(items, nutrient_capacity)
 	    answer += ("Bagged the following food items from " + name + ":\n  " +
 	          '\n  '.join(sorted(item for item,_,_ in bagged)))
-	    val, calories = totalvalue(bagged)
-	    answer += ("Total grams of protein of %i and a total caloric intake of %i" % (val, -calories)) 
+	    val, chosen_nutrient = totalvalue(bagged)
+	    answer += "Total grams of protein of " + str(val) + " and a total " + nutrient_type + " intake of " + str(-chosen_nutrient)
 
     return answer
 

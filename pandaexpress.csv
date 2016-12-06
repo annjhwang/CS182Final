@@ -1,4 +1,4 @@
-"Restaurant","Food Category","Item_Name","Item Description 2015","Servings Per Item 2015","Serving Size 2015","Serving Size Unit 2015","Servings Size Text 2015","Calories 2015","Total Fat (g) 2015","Carbohydrates (g) 2015","Sugar (g) 2015","Protein (g) 2015",Menu_Item_ID
+Restaurant,Food Category,Item_Name,Item Description 2015,Servings Per Item 2015,Serving Size 2015,Serving Size Unit 2015,Servings Size Text 2015,Calories,Fat,Carbohydrates,Sugar,Protein,Menu_Item_ID
 "Panda Express",Entrees,"Asian Chicken","Asian Chicken, Chicken Entree",,170,g*,,340,13,14,10,41,62680
 "Panda Express",Entrees,"Asian Chicken, Kids","Asian Chicken, Chicken, Kids",,102,g*,,200,8,8,6,25,62676
 "Panda Express",Entrees,"Beijing Beef","Beijing Beef w/ Bell Peppers & Sliced Onions, Spicy, Beef Entree",,159,g*,,690,35,59,32,21,4504

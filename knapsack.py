@@ -9,7 +9,10 @@ import time
  
 
 # allows user to input maximum caloric intake
-max_calories = input('Enter the maximum amount of calories: ')
+nutrient_type = raw_input('Enter the type of nutrient you want to limit: ')
+print 'nutrient:', nutrient_type
+nutrient_capacity = input('Enter the maximum maximum of this nutrient (in kcal or g): ')
+print 'Capacity for ' + str(nutrient_type) + ' intake: ' + str(nutrient_capacity)
 
 # importing all the data and cleaning
 burgerking = pd.DataFrame.from_csv('burgerking.csv')
@@ -31,7 +34,7 @@ def totalvalue(comb):
     for item, calories, val in comb:
         tot_calories  += calories
         totval += val
-    return (totval, -tot_calories) if tot_calories <= max_calories else (0, 0)
+    return (totval, -tot_calories) if tot_calories <= nutrient_capacity else (0, 0)
 
 # BRUTE FORCE APPROACH 
 def knapsack_brute_force(items):
@@ -64,12 +67,13 @@ def knapsack_dp(foods, limit):
     return best_foods
 
 # TIME BRUTE FORCE APPROACH FOR 10 RESTAURANTS
+'''
 print 'Brute Force Approach:'
 start_time = time.time()
 for restaurant, name in zip(restaurants, restaurant_names):
     names = restaurant['Item_Name'].values
-    calories = restaurant['Calories 2015'].values
-    protein = restaurant['Protein (g) 2015'].values
+    calories = restaurant['Calories'].values
+    protein = restaurant['Protein (g)'].values
     items = zip(names, calories, protein)
 
     # knapsack problem for burgerking 
@@ -79,22 +83,23 @@ for restaurant, name in zip(restaurants, restaurant_names):
     val, calories = totalvalue(bagged)
     print("Total grams of protein of %i and a total caloric intake of %i" % (val, -calories)) 
 end_time = time.time()
-print("--- %s seconds ---" % (end_time - start_time))
+print("--- %s seconds ---" % (end_time - start_time))'''
 
 # TIME DP APPROACH FOR 10 RESTAURANTS 
 print 'Dynamic Programming Approach:'
 start_time = time.time()
 for restaurant, name in zip(restaurants, restaurant_names):
     names = restaurant['Item_Name'].values
-    calories = restaurant['Calories 2015'].values
-    protein = restaurant['Protein (g) 2015'].values
-    items = zip(names, calories, protein)
+    print nutrient_type
+    nutrient = [int(x) for x in restaurant[nutrient_type].values]
+    protein = restaurant['Protein'].values
+    items = zip(names, nutrient, protein)
 
     # knapsack problem for burgerking 
-    bagged = knapsack_dp(items, max_calories)
+    bagged = knapsack_dp(items, nutrient_capacity)
     print("Bagged the following food items from " + name + ":\n  " +
           '\n  '.join(sorted(item for item,_,_ in bagged)))
-    val, calories = totalvalue(bagged)
-    print("Total grams of protein of %i and a total caloric intake of %i" % (val, -calories)) 
+    val, nutrient = totalvalue(bagged)
+    print("Total grams of protein of " + str(val) + " and a total " + nutrient_type + " intake of " + str(-nutrient))
 end_time = time.time()
 print("--- %s seconds ---" % (end_time - start_time))

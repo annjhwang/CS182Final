@@ -1,4 +1,4 @@
-"Restaurant","Food Category","Item_Name","Item Description 2015","Servings Per Item 2015","Serving Size 2015","Serving Size Unit 2015","Servings Size Text 2015","Calories 2015","Total Fat (g) 2015","Carbohydrates (g) 2015","Sugar (g) 2015","Protein (g) 2015",Menu_Item_ID
+Restaurant,Food Category,Item_Name,Item Description 2015,Servings Per Item 2015,Serving Size 2015,Serving Size Unit 2015,Servings Size Text 2015,Calories,Fat,Carbohydrates,Sugar,Protein,Menu_Item_ID
 Subway,"Fried Potatoes","Hash Browns, Breakfast Sides","Hash Browns, Breakfast Sides, Breakfast & Pizza",,102,g,,210,10,28,0,2,34570
 Subway,Salads,"Big Philly Cheese Steak Salad","Big Philly Cheese Steak Salad w/ Olives, Cucumbers, Green Peppers, Red Onions, Spinach & Tomatoes w/out Dressing, Chopped Salads, Salads",,420,g,,330,16,17,7,32,23844
 Subway,Salads,"Black Forest Ham Salad","Black Forest Ham Salad w/ Black Olives, Cucumbers, Green Peppers, Red Onions, Spinach & Tomatoes w/out Dressing, Low Fat Chopped Salad, Salads; Choice of Adding: Chips, Cookies, Yogurt Parfait or Apple Slices & Beverage",,340,g,,110,3,12,6,12,1893
