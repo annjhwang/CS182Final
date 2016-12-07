@@ -27,7 +27,8 @@ kfc = pd.DataFrame.from_csv('kfc.csv')
 
 restaurants = [burgerking, elpollo, chickfila, tacobell, subway, abp, pandaexpress, panera, carlsjr, kfc]
 restaurant_names = ['Burger King', 'El Pollo Loco', 'Chick-Fila-A' , 'Taco Bell', 'Subway', 'Au Bon Pain', 'Panda Express', 'Panera Bread', 'Carls Jr', 'KFC']
-
+restaurant_static = ['/static/burgerking.jpg', '/static/elpollo.png', '/static/chickfila.jpg', '/static/tacobell.jpg', '/static/subway.jpg', '/static/abp.png', \
+					'/static/pandaexpress.png', '/static/panera.jpg', '/static/carlsjr.jpeg', '/static/kfc.png']
 
 @app.route('/')
 def my_form(name=None):
@@ -36,7 +37,7 @@ def my_form(name=None):
 @app.route('/', methods=['POST'])
 def my_form_post():
     #nutrient_type = str(request.form['nutrient'])
-    nutrient_type ='Carbohydrates'
+    nutrient_type = str(request.form['nutrient'])
     capacity = request.form['capacity']
     #print nutrient
     nutrient_capacity = int(capacity)
@@ -72,20 +73,26 @@ def my_form_post():
 	    return best_foods
 
 
-    answer = ' '
-    for restaurant, name in zip(restaurants, restaurant_names):
-	    names = restaurant['Item_Name'].values
-	    chosen_nutrient = [int(x) for x in restaurant[nutrient_type].values]
-	    protein = restaurant['Protein'].values
-	    items = zip(names, chosen_nutrient, protein)
-	    # knapsack problem for burgerking 
-	    bagged = knapsack_dp(items, nutrient_capacity)
-	    answer += ("Bagged the following food items from " + name + ":\n  " +
-	          '\n  '.join(sorted(item for item,_,_ in bagged)))
-	    val, chosen_nutrient = totalvalue(bagged)
-	    answer += "Total grams of protein of " + str(val) + " and a total " + nutrient_type + " intake of " + str(-chosen_nutrient)
-
-    return answer
+    answers = []
+    for restaurant, name, image in zip(restaurants, restaurant_names, restaurant_static):
+    	print image
+        #answer = ''
+        names = restaurant['Item_Name'].values
+        chosen_nutrient = [int(x) for x in restaurant[nutrient_type].values]
+        protein = restaurant['Protein'].values
+        items = zip(names, chosen_nutrient, protein)
+        # knapsack problem for burgerking 
+        bagged_foods = knapsack_dp(items, nutrient_capacity)
+        val, chosen_nutrient = totalvalue(bagged_foods)
+        #bagged = knapsack_dp(items, nutrient_capacity)
+        #answer += ("Bagged the following food items from " + name + ":\n  " +
+        #      '\n  '.join(sorted(item for item,_,_ in bagged)))
+        
+        #answer += "Total grams of protein of " + str(val) + " and a total " + nutrient_type + " intake of " + str(-chosen_nutrient)
+       
+        answers.append([name,bagged_foods, val, -chosen_nutrient, image, nutrient_type])
+    return render_template("returned-output.html",result = answers)
+    #return answer
 
 if __name__ == '__main__':
     app.run()
