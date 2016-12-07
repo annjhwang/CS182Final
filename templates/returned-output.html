@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+   <body>
+   
+         {% for name, foods, protein, nutrient, image, type in result %}
+         <table border = 1>
+            <tr>
+               <th> <img src="{{image}}" style="width:128px;height:128px;">{{ name }} </th>
+               <th>Protein (g)</th>
+               <th>{{type}} (g/kcal)</th>
+            </tr>
+            {% for food in foods %}
+            	<tr>
+               <td> {{food[0]}} </th>
+               	<td> {{food[1]}} </th>
+               		<td> {{food[2]}} </th>
+            	</tr>
+            {% endfor %}
+            <tr>
+            	<td>Total</td>
+            	<td>{{protein}}</td>
+            	<td>{{nutrient}}</td>
+            </tr>
+         </table>
+         {% endfor %}
+      
+   </body>
+</html>
