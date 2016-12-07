@@ -1,8 +1,19 @@
+# ***Temporary Title Here***
+# A CS182 Final Project
+# Jason Cui | jasoncui@college.harvard.edu
+# Annie Hwang | annhwang@college.harvard.edu
+
 from constraint import *
 import pandas as pd
 import numpy as np
 from itertools import combinations
 import time
+
+from flask import Flask
+from flask import request
+from flask import render_template
+
+app = Flask(__name__)
 
 class Food():
 	def init(self, item):
