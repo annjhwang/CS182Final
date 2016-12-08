@@ -62,11 +62,12 @@ def my_form_post():
      
     # DYNAMIC PROGRAMMING APPROACH
     def knapsack_dp(foods, limit):
+        # 2D table to memoize as we go
         table = [[0 for w in range(limit + 1)] for j in xrange(len(foods) + 1)]
         for j in xrange(1, len(foods) + 1):
             food, nutrient, val = foods[j-1]
             for w in xrange(1, limit + 1):
-                if nutrient> w:
+                if nutrient > w:
                     table[j][w] = table[j-1][w]
                 else:
                     table[j][w] = max(table[j-1][w],
@@ -74,11 +75,12 @@ def my_form_post():
         best_foods = []
         w = limit
         for j in range(len(foods), 0, -1):
-            was_added = table[j][w] != table[j-1][w]
-     
-            if was_added:
+            was_bagged = table[j][w] != table[j-1][w]
+            # checking if the food has been added to the bag
+            if was_bagged:
                 food, nutrient, val = foods[j-1]
                 best_foods.append(foods[j-1])
+                # decrementing the limit as we add more food items
                 w -= nutrient
         return best_foods
 
