@@ -1,28 +1,65 @@
 <!doctype html>
 <html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CS182 Final Project</title>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/starter-template.css') }}">
+</head>
    <body>
+          <nav class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">CS182 Final Project</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
    
+   <div class="container">
+      <h3>These are the food items from each restaurant that meets your needs. Happy eating!</h3>
+
+      <div class="starter-template">
          {% for name, foods, protein, nutrient, image, type in result %}
-         <table border = 1>
+         <table border = 1 align="center">
             <tr>
-               <th> <img src="{{image}}" style="width:128px;height:128px;">{{ name }} </th>
-               <th>Protein (g)</th>
-               <th>{{type}} (g/kcal)</th>
+               <th width = "380" text-align="center"> <img src="{{image}}" style="width:55px;height:50px;margin-bottom:4px;margin-top:4px; margin-left:10px"></th>
+               <th width ="80">Protein (g)</th>
+               <th width ="130">{{type}} (g/kcal)</th>
             </tr>
             {% for food in foods %}
             	<tr>
-               <td> {{food[0]}} </th>
-               	<td> {{food[1]}} </th>
-               		<td> {{food[2]}} </th>
+               <td width = "380"> {{food[0]}} </th>
+               <td width ="80"> {{food[1]}} </th>
+               <td width ="130"> {{food[2]}} </th>
             	</tr>
             {% endfor %}
             <tr>
-            	<td>Total</td>
-            	<td>{{protein}}</td>
-            	<td>{{nutrient}}</td>
+            	<td width = "380">Total</td>
+            	<td width ="80">{{protein}}</td>
+            	<td width ="130">{{nutrient}}</td>
             </tr>
          </table>
          {% endfor %}
+      </div>
+   </div>
       
    </body>
 </html>
