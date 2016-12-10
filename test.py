@@ -16,16 +16,16 @@ app = Flask(__name__)
 app.debug = True
 
 # importing all the data and cleaning
-burgerking = pd.DataFrame.from_csv('burgerking.csv')
-elpollo = pd.DataFrame.from_csv('elpollo.csv')
-chickfila = pd.DataFrame.from_csv('chickfila.csv')
-tacobell = pd.DataFrame.from_csv('tacobelldata.csv')
-subway= pd.DataFrame.from_csv('subwaydata.csv')
-abp = pd.DataFrame.from_csv('ABP.csv')
-pandaexpress = pd.DataFrame.from_csv('pandaexpress.csv')
-panera = pd.DataFrame.from_csv('panera.csv')
-carlsjr = pd.DataFrame.from_csv('carlsjr.csv')
-kfc = pd.DataFrame.from_csv('kfc.csv')
+burgerking = pd.DataFrame.from_csv('data/burgerking.csv')
+elpollo = pd.DataFrame.from_csv('data/elpollo.csv')
+chickfila = pd.DataFrame.from_csv('data/chickfila.csv')
+tacobell = pd.DataFrame.from_csv('data/tacobelldata.csv')
+subway= pd.DataFrame.from_csv('data/subwaydata.csv')
+abp = pd.DataFrame.from_csv('data/ABP.csv')
+pandaexpress = pd.DataFrame.from_csv('data/pandaexpress.csv')
+panera = pd.DataFrame.from_csv('data/panera.csv')
+carlsjr = pd.DataFrame.from_csv('data/carlsjr.csv')
+kfc = pd.DataFrame.from_csv('data/kfc.csv')
 
 restaurants = [burgerking, elpollo, chickfila, tacobell, subway, abp, pandaexpress, panera, carlsjr, kfc]
 restaurant_names = ['Burger King', 'El Pollo Loco', 'Chick-Fila-A' , 'Taco Bell', 'Subway', 'Au Bon Pain', 'Panda Express', 'Panera Bread', 'Carls Jr', 'KFC']
