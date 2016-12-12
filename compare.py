@@ -1,4 +1,5 @@
-# ***Temporary Title Here***
+# Optimization of Caloric and Macronutrient Intake 
+# Through Constraint Satisfaction Problems
 # A CS182 Final Project
 # Annie Hwang | annhwang@college.harvard.edu
 # Jason Cui | jasoncui@college.harvard.edu
@@ -51,6 +52,7 @@ def randomAssignment(foods, nutrient_capacity):
     # weight and values are 0 
     total_weight = 0
     total_value = 0
+
     # check the knapsack is under weight and there list of foods not empty
     while (len(foods) != 0):
         # randomly choose a food from possibilities
@@ -80,10 +82,9 @@ def randomAssignment(foods, nutrient_capacity):
     return [knapsack, foods, total_value, total_weight]
 
 
-# generating success for local search algorithms
-def generateSuccessor(knapsack, foods, nutrient_capacity):
-    # swapping items with successor
-    # first delete random item from knapsack and put back in food list
+# generating successor for local search algorithms
+def generateSuccessor(knapsack, foods, nutrient_capacity, currentValue, currentWeight):
+
     # check the knapsack is under weight and there list of foods not empty
     while (len(foods) != 0):
 
@@ -189,6 +190,7 @@ def knapsack_greedy(foods, limit, function, column_index):
 ##################### LOCAL SEARCH APPROACH ######################
 ##################################################################
 
+# Hill Climbing solution
 def knapsack_hc(foods, limit):
     # randomly assign an initial state
     currentAssignment = randomAssignment(foods, limit)
@@ -212,6 +214,7 @@ def knapsack_hc(foods, limit):
 
     return currentAssignment[0], currentAssignment[3], currentAssignment[2]
 
+# Simulated Annealing solution
 def knapsack_sa(foods, limit):
     return None
 
@@ -255,7 +258,8 @@ max_weight = nutrient_capacity
 # randomizing order of training set b/c some restaurant
 # items are better than others
 item = shuffle(item)
-for i in xrange(len(item)):
+# for i in xrange(len(item)):
+for i in range(1):
     # gradually increase trainings set
     items = item[:i+3]
     knapsack = knapsack_dp(items, max_weight)
@@ -263,22 +267,21 @@ for i in xrange(len(item)):
     r = []
     if opt_val != 0:
         # greedy using value heuristic
-        knapsack, wt, val = knapsack_greedy(items, max_weight, value, 3)
-        r.append(float(val)/opt_val)
+        # knapsack, wt, val = knapsack_greedy(items, max_weight, value, 3)
+        # r.append(float(val)/opt_val)
 
         # greedy using value/weight heuristic
-        knapsack, wt, val = knapsack_greedy(items, max_weight, val_weight_ratio, 3)
-        r.append(float(val)/opt_val)
+        # knapsack, wt, val = knapsack_greedy(items, max_weight, val_weight_ratio, 3)
+        # r.append(float(val)/opt_val)
 
         # hill climbing
         knapsack, wt, val = knapsack_hc(items, max_weight)
-        print 'knapsack for hc', knapsack
+        # print 'knapsack for hc', knapsack
         
-
         # DP
-        knapsack = knapsack_dp(items, max_weight)
-        val, wt = finalValueWeight(knapsack, max_weight)
-        r.append(float(val)/opt_val)
+        # knapsack = knapsack_dp(items, max_weight)
+        # val, wt = finalValueWeight(knapsack, max_weight)
+        # r.append(float(val)/opt_val)
     else:
         r = [1.0, 1.0, 1.0]
     result.append(r)
@@ -288,18 +291,19 @@ print 'Done running all the algorithms'
 ######################## PLOTTING RESULTS ########################
 ##################################################################
 
-print 'Ready to plot'
-xs = xrange(len(item))
-fig = plt.figure()
-ax = plt.subplot(111)
 
-ax.scatter(xs, [e[0] for e in result], c='r', marker='x', s=20, label='greedy - value')
-ax.scatter(xs, [e[1] for e in result], c='b', marker='x', s=20, label='greedy - ratio')
-ax.scatter(xs, [e[2] for e in result], c='g', marker='x', s=20, label='dp')
-box = ax.get_position()
-ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
-ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-plt.show()
+print 'Ready to plot'
+# xs = xrange(len(item))
+# fig = plt.figure()
+# ax = plt.subplot(111)
+
+# ax.scatter(xs, [e[0] for e in result], c='r', marker='x', s=20, label='greedy - value')
+# ax.scatter(xs, [e[1] for e in result], c='b', marker='x', s=20, label='greedy - ratio')
+# ax.scatter(xs, [e[2] for e in result], c='g', marker='x', s=20, label='dp')
+# box = ax.get_position()
+# ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+# ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+# plt.show()
 
 ##################################################################
 ################# PRINTING AVERAGES OF RESULTS ###################
