@@ -235,10 +235,12 @@ for i in xrange(len(item)):
         r = [1.0, 1.0, 1.0]
     result.append(r)
 
+print 'Done running all the algorithms'
 ##################################################################
 ######################## PLOTTING RESULTS ########################
 ##################################################################
 
+print 'Ready to plot'
 xs = xrange(len(item))
 fig = plt.figure()
 ax = plt.subplot(111)
