@@ -1,4 +1,5 @@
-# ***Temporary Title Here***
+# Optimization of Caloric and Macronutrient Intake 
+# Through Constraint Satisfaction Problems
 # A CS182 Final Project
 # Annie Hwang | annhwang@college.harvard.edu
 # Jason Cui | jasoncui@college.harvard.edu
@@ -149,6 +150,7 @@ def knapsack_greedy(foods, limit, function, column_index):
 ##################### LOCAL SEARCH APPROACH ######################
 ##################################################################
 
+# Hill Climbing solution
 def knapsack_hc(foods, limit):
     currentAssignment = randomAssignment(foods, limit)
     bestAssignment = None
@@ -164,6 +166,8 @@ def knapsack_hc(foods, limit):
             end = True
     return bestAssignment[0], bestAssignment[3], bestAssignment[2]
 
+
+# Simulated Annealing solution
 def knapsack_sa(foods, limit):
     return None
 
@@ -223,10 +227,9 @@ for i in xrange(len(item)):
         r.append(float(val)/opt_val)
 
         # hill climbing
-        knapsack, wt, val = knapsack_hc(items, max_weight)
-        print 'knapsack for hc', knapsack
+        # knapsack, wt, val = knapsack_hc(items, max_weight)
+        # print 'knapsack for hc', knapsack
         
-
         # DP
         knapsack = knapsack_dp(items, max_weight)
         val, wt = finalValueWeight(knapsack, max_weight)
