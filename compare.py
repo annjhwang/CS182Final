@@ -46,7 +46,6 @@ def combinations(foods):
 
 # random assignments for local search algorithms
 def randomAssignment(foods, nutrient_capacity):
-
     # knapsack is originally empty 
     knapsack = []
 
@@ -56,7 +55,6 @@ def randomAssignment(foods, nutrient_capacity):
 
     # check the knapsack is under weight and there list of foods not empty
     while (len(foods) != 0):
-
         # randomly choose a food from possibilities
         food = random.choice(foods)
 
@@ -78,20 +76,18 @@ def randomAssignment(foods, nutrient_capacity):
             total_value += value
             total_weight += weight
 
-    print 'random assignments: ', knapsack
-    print 'total fats in grams: ', total_weight
-    print 'total protein in grams: ', total_value
+    #print 'random assignments: ', knapsack
+    #print 'total fats in grams: ', total_weight
+    #print 'total protein in grams: ', total_value
     return [knapsack, foods, total_value, total_weight]
+
 
 # generating successor for local search algorithms
 def generateSuccessor(knapsack, foods, nutrient_capacity, currentValue, currentWeight):
-
     # check the knapsack is under weight and there list of foods not empty
     while (len(foods) != 0):
-
         # randomly choose a food from possibilities 
         food = random.choice(foods)
-
         # store that foods weight and value
         weight = food[1]
         value = food[2]
@@ -127,7 +123,12 @@ def generateSuccessor(knapsack, foods, nutrient_capacity, currentValue, currentW
                 knapsack.append(food)
 
                 return [knapsack, foods, currentValue, currentWeight]
+<<<<<<< HEAD
         
+=======
+    
+        return [knapsack, foods, currentValue, currentWeight]
+>>>>>>> origin/master
     return [knapsack, foods, currentValue, currentWeight]
 
 ##################################################################
@@ -194,7 +195,6 @@ def knapsack_greedy(foods, limit, function, column_index):
 
 # Hill Climbing solution
 def knapsack_hc(foods, limit):
-
     # randomly assign an initial state
     currentAssignment = randomAssignment(foods, limit)
     currentWeight = currentAssignment[3]
@@ -213,8 +213,9 @@ def knapsack_hc(foods, limit):
             currentAssignment = successor
             currentWeight = successorWeight
             currentValue = successorValue
-        print 'protein (g): ', currentValue
+        #print 'protein (g): ', currentValue
 
+    #print 'knasack using HC:', currentAssignment[0]
     return currentAssignment[0], currentAssignment[3], currentAssignment[2]
 
 # Simulated Annealing solution
@@ -261,8 +262,8 @@ max_weight = nutrient_capacity
 # randomizing order of training set b/c some restaurant
 # items are better than others
 item = shuffle(item)
-# for i in xrange(len(item)):
-for i in range(1):
+for i in xrange(len(item)):
+#for i in range(1):
     # gradually increase trainings set
     items = item[:i+3]
     knapsack = knapsack_dp(items, max_weight)
@@ -279,24 +280,34 @@ for i in range(1):
 
         # hill climbing
         knapsack, wt, val = knapsack_hc(items, max_weight)
-        # print 'knapsack for hc', knapsack
+        print 'knapsack for hc', knapsack
+        r.append(float(val)/opt_val)
         
         # DP
         # knapsack = knapsack_dp(items, max_weight)
         # val, wt = finalValueWeight(knapsack, max_weight)
         # r.append(float(val)/opt_val)
     else:
-        r = [1.0, 1.0, 1.0]
+        #r = [1.0, 1.0, 1.0]
+        r = [1.0]
     result.append(r)
 
+print 'Done running all the algorithms'
 ##################################################################
 ######################## PLOTTING RESULTS ########################
 ##################################################################
 
-# xs = xrange(len(item))
-# fig = plt.figure()
-# ax = plt.subplot(111)
 
+#print 'Ready to plot'
+xs = xrange(len(item))
+fig = plt.figure()
+ax = plt.subplot(111)
+
+print len(xs)
+print len(result)
+
+ax.scatter(xs, [e[0] for e in result], c='r', marker='x', s=20, label='HC')
+plt.show()
 # ax.scatter(xs, [e[0] for e in result], c='r', marker='x', s=20, label='greedy - value')
 # ax.scatter(xs, [e[1] for e in result], c='b', marker='x', s=20, label='greedy - ratio')
 # ax.scatter(xs, [e[2] for e in result], c='g', marker='x', s=20, label='dp')
