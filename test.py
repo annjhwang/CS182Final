@@ -52,7 +52,7 @@ def my_form_post():
     #print nutrient
     nutrient_capacity = int(capacity)
 
-    def totalvalue(comb):
+    def finalValueWeight(comb):
         tot_nutrients = totval = 0
         for item, nutrient, val in comb:
             tot_nutrients  += nutrient
@@ -94,7 +94,7 @@ def my_form_post():
         items = zip(names, chosen_nutrient, protein)
         # knapsack problem for burgerking 
         bagged_foods = knapsack_dp(items, nutrient_capacity)
-        val, chosen_nutrient = totalvalue(bagged_foods)
+        val, chosen_nutrient = finalValueWeight(bagged_foods)
         #bagged = knapsack_dp(items, nutrient_capacity)
         #answer += ("Bagged the following food items from " + name + ":\n  " +
         #      '\n  '.join(sorted(item for item,_,_ in bagged)))

@@ -29,6 +29,7 @@ kfc = pd.DataFrame.from_csv('data/kfc.csv')
 restaurants = [burgerking, elpollo, chickfila, tacobell, subway, abp, pandaexpress, panera, carlsjr, kfc]
 restaurant_names = ['Burger King', 'El Pollo Loco', 'Chick-Fila-A' , 'Taco Bell', 'Subway', 'Au Bon Pain', 'Panda Express', 'Panera Bread', 'Carls Jr', 'KFC']
 
+# function to value calculate total value and weight
 def totalvalue(comb):
     tot_calories = totval = 0
     for item, calories, val in comb:
