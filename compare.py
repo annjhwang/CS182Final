@@ -9,8 +9,8 @@ import pandas as pd
 import numpy as np
 from itertools import combinations
 import operator
-import copy
 from sklearn.utils import shuffle
+import random
 
 ##################################################################
 ######################## DATA EXTRACTION #########################
@@ -46,18 +46,46 @@ def combinations(foods):
 # random assignments for local search algorithms
 def randomAssignment(foods, nutrient_capacity):
     # return knapsacked food items and rest of food items
-    print(random.choice(foo))
     knapsack = []
     total_weight = 0
-    food = random.choice(foods)
-    weight = food[1]
+    total_value = 0
+    keep_adding = True
     # check the knapsack is under weight and there list of foods not empty
-    while (total_weight + weight) <= nutrient_capacity and foods: 
-        foods.remove(food)
-        knapsack.append(food)
+    while keep_adding:
         food = random.choice(foods)
-    return [knapsack, foods]
+        weight = food[1]
+        value = food[2]
+        if (total_weight + weight) > nutrient_capacity or not foods:
+            keep_adding = False
+        else:
+            foods.remove(food)
+            knapsack.append(food)
+            total_value += value
+            total_weight += weight
+    print 'random assignments: ', knapsack
+    return [knapsack, foods, total_value, total_weight]
 
+# generating success for local search algorithms
+def generateSuccessor(knapsack, foods, nutrient_capacity):
+    # swapping items with successor
+    # first delete random item from knapsack and put back in food list
+    randomFoodInKnapsack = random.choice(knapsack)
+    knapsack.remove(randomFoodInKnapsack)
+    foods.append(randomFoodInKnapsack)
+
+    # include random item from food list
+    total_weight = sum(list(zip(*knapsack)[1]))
+    total_value = sum(list(zip(*knapsack)[2]))
+    while True:
+        food = random.choice(foods)
+        weight = food[1]
+        if (total_weight + weight) <= nutrient_capacity:
+            total_value += food[2]
+            total_weight += weight
+            break
+    knapsack.append(food)
+    print 'generateSuccessor:', knapsack
+    return [knapsack, foods, total_value, total_weight]
 
 ##################################################################
 #################### BRUTE FORCE APPROACH #######################
@@ -122,13 +150,22 @@ def knapsack_greedy(foods, limit, function, column_index):
 ##################################################################
 
 def knapsack_hc(foods, limit):
-    assignment = randomAssignment(foods, limit)
+    currentAssignment = randomAssignment(foods, limit)
+    bestAssignment = None
     end = False
     while not end:
-        
+        newAssignment = generateSuccessor(currentAssignment[0], currentAssignment[1], limit)
+        # compare values from each assignment
+        if newAssignment[2] > currentAssignment[2]:
+            currentAssignment = newAssignment
+        if currentAssignment[1]:
+            bestAssignment = currentAssignment
+        else:
+            end = True
+    return bestAssignment[0], bestAssignment[3], bestAssignment[2]
 
 def knapsack_sa(foods, limit):
-
+    return None
 
 
 ##################################################################
@@ -172,7 +209,7 @@ max_weight = nutrient_capacity
 item = shuffle(item)
 for i in xrange(len(item)):
     # gradually increase trainings set
-    items = item[:i+1]
+    items = item[:i+3]
     knapsack = knapsack_dp(items, max_weight)
     opt_val, opt_wt = finalValueWeight(knapsack, max_weight)
     r = []
@@ -184,6 +221,12 @@ for i in xrange(len(item)):
         # greedy using value/weight heuristic
         knapsack, wt, val = knapsack_greedy(items, max_weight, val_weight_ratio, 3)
         r.append(float(val)/opt_val)
+
+        # hill climbing
+        knapsack, wt, val = knapsack_hc(items, max_weight)
+        print 'knapsack for hc', knapsack
+        
+
         # DP
         knapsack = knapsack_dp(items, max_weight)
         val, wt = finalValueWeight(knapsack, max_weight)
