@@ -3,7 +3,7 @@
 # Jason Cui | jasoncui@college.harvard.edu
 # Annie Hwang | annhwang@college.harvard.edu
 import pandas as pd
-from constraint import *
+# from constraint import *
 import numpy as np
 from itertools import combinations
 import time
