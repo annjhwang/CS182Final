@@ -43,6 +43,22 @@ def combinations(foods):
         result.extend(new_comb)
     return result
 
+# random assignments for local search algorithms
+def randomAssignment(foods, nutrient_capacity):
+    # return knapsacked food items and rest of food items
+    print(random.choice(foo))
+    knapsack = []
+    total_weight = 0
+    food = random.choice(foods)
+    weight = food[1]
+    # check the knapsack is under weight and there list of foods not empty
+    while (total_weight + weight) <= nutrient_capacity and foods: 
+        foods.remove(food)
+        knapsack.append(food)
+        food = random.choice(foods)
+    return [knapsack, foods]
+
+
 ##################################################################
 #################### BRUTE FORCE APPROACH #######################
 ##################################################################
@@ -59,31 +75,6 @@ def knapsack_brute_force(items, max_weight):
             best_value = set_value
             knapsack = item_set
     return knapsack, best_weight, best_value
-
-##################################################################
-################# DYNAMIC PROGRAMMING APPROACH ###################
-##################################################################
-
-def knapsack_dp(foods, limit):
-    table = [[0 for w in range(limit + 1)] for j in xrange(len(foods) + 1)]
-    for j in xrange(1, len(foods) + 1):
-        food, calories, val = foods[j-1]
-        for w in xrange(1, limit + 1):
-            if calories > w:
-                table[j][w] = table[j-1][w]
-            else:
-                table[j][w] = max(table[j-1][w],
-                                  table[j-1][w-calories] + val)
-    best_foods = []
-    w = limit
-    for j in range(len(foods), 0, -1):
-        was_added = table[j][w] != table[j-1][w]
- 
-        if was_added:
-            food, calories, val = foods[j-1]
-            best_foods.append(foods[j-1])
-            w -= calories
-    return best_foods
 
 ##################################################################
 ######################## GREEDY APPROACH #########################
@@ -118,12 +109,52 @@ def knapsack_greedy(foods, limit, function, column_index):
     total_weight = 0
     total_value = 0
     counter = 0
-    while (total_weight + sorted_foods[counter][1]) < limit and (counter < (len(sorted_foods)-1)):
+    while (total_weight + sorted_foods[counter][1]) <= limit and (counter < (len(sorted_foods)-1)):
         knapsack.append(sorted_foods[counter][:column_index])
         total_weight += sorted_foods[counter][1]
         total_value += sorted_foods[counter][2]
         counter += 1
     return knapsack, total_weight, total_value
+
+
+##################################################################
+##################### LOCAL SEARCH APPROACH ######################
+##################################################################
+
+def knapsack_hc(foods, limit):
+    assignment = randomAssignment(foods, limit)
+    end = False
+    while not end:
+        
+
+def knapsack_sa(foods, limit):
+
+
+
+##################################################################
+################# DYNAMIC PROGRAMMING APPROACH ###################
+##################################################################
+
+def knapsack_dp(foods, limit):
+    table = [[0 for w in range(limit + 1)] for j in xrange(len(foods) + 1)]
+    for j in xrange(1, len(foods) + 1):
+        food, calories, val = foods[j-1]
+        for w in xrange(1, limit + 1):
+            if calories > w:
+                table[j][w] = table[j-1][w]
+            else:
+                table[j][w] = max(table[j-1][w],
+                                  table[j-1][w-calories] + val)
+    best_foods = []
+    w = limit
+    for j in range(len(foods), 0, -1):
+        was_added = table[j][w] != table[j-1][w]
+ 
+        if was_added:
+            food, calories, val = foods[j-1]
+            best_foods.append(foods[j-1])
+            w -= calories
+    return best_foods
 
 ##################################################################
 #################### COMPARING ALL ALGORITHMS ####################
