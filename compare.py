@@ -128,7 +128,7 @@ def generateSuccessor(knapsack, foods, nutrient_capacity, currentValue, currentW
 
                 return [knapsack, foods, currentValue, currentWeight]
         
-        return [knapsack, foods, currentValue, currentWeight]
+    return [knapsack, foods, currentValue, currentWeight]
 
 ##################################################################
 #################### BRUTE FORCE APPROACH #######################
