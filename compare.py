@@ -45,47 +45,87 @@ def combinations(foods):
 
 # random assignments for local search algorithms
 def randomAssignment(foods, nutrient_capacity):
-    # return knapsacked food items and rest of food items
+    # knapsack is originally empty 
     knapsack = []
+
+    # weight and values are 0 
     total_weight = 0
     total_value = 0
-    keep_adding = True
     # check the knapsack is under weight and there list of foods not empty
-    while keep_adding:
+    while (len(foods) != 0):
+        # randomly choose a food from possibilities
         food = random.choice(foods)
+
+        # store that foods weight and value
         weight = food[1]
         value = food[2]
+
+        # check if it exceeds capacity
         if (total_weight + weight) > nutrient_capacity or not foods:
-            keep_adding = False
+            print 'random assignments: ', knapsack
+            print 'total fats in grams: ', total_weight
+            print 'total protein in grams: ', total_value
+            return [knapsack, foods, total_value, total_weight]
+
+        # remove food from possibilities and add to bag
         else:
             foods.remove(food)
             knapsack.append(food)
             total_value += value
             total_weight += weight
+
     print 'random assignments: ', knapsack
+    print 'total fats in grams: ', total_weight
+    print 'total protein in grams: ', total_value
     return [knapsack, foods, total_value, total_weight]
+
 
 # generating success for local search algorithms
 def generateSuccessor(knapsack, foods, nutrient_capacity):
     # swapping items with successor
     # first delete random item from knapsack and put back in food list
-    randomFoodInKnapsack = random.choice(knapsack)
-    knapsack.remove(randomFoodInKnapsack)
-    foods.append(randomFoodInKnapsack)
+    # check the knapsack is under weight and there list of foods not empty
+    while (len(foods) != 0):
 
-    # include random item from food list
-    total_weight = sum(list(zip(*knapsack)[1]))
-    total_value = sum(list(zip(*knapsack)[2]))
-    while True:
+        # randomly choose a food from possibilities 
         food = random.choice(foods)
+
+        # store that foods weight and value
         weight = food[1]
-        if (total_weight + weight) <= nutrient_capacity:
-            total_value += food[2]
-            total_weight += weight
-            break
-    knapsack.append(food)
-    print 'generateSuccessor:', knapsack
-    return [knapsack, foods, total_value, total_weight]
+        value = food[2]
+
+        # if possible add to knapsack
+        if (currentWeight + weight) < nutrient_capacity:
+            foods.remove(food)
+            knapsack.append(food)
+            currentValue += value
+            currentWeight += weight
+            return [knapsack, foods, currentValue, currentWeight]
+
+        # else swap with random food in knapsack
+        else:
+            # pick random item from knapsack
+            randomFoodInKnapsack = random.choice(knapsack)
+            tempValue = randomFoodInKnapsack[2]
+            tempWeight = randomFoodInKnapsack[1]
+
+            # if capacity isn't exceeded make the swap 
+            if (currentWeight - tempWeight + weight) < nutrient_capacity:
+
+                # remove choice from knapsack 
+                knapsack.remove(randomFoodInKnapsack)
+                foods.append(randomFoodInKnapsack)
+                currentWeight -= tempWeight
+                currentValue -= tempValue
+
+                # add choice to knapsack 
+                currentValue += value
+                currentWeight += weight
+                foods.remove(food)
+                knapsack.append(food)
+
+                return [knapsack, foods, currentValue, currentWeight]
+        return [knapsack, foods, currentValue, currentWeight]
 
 ##################################################################
 #################### BRUTE FORCE APPROACH #######################
@@ -150,19 +190,27 @@ def knapsack_greedy(foods, limit, function, column_index):
 ##################################################################
 
 def knapsack_hc(foods, limit):
+    # randomly assign an initial state
     currentAssignment = randomAssignment(foods, limit)
-    bestAssignment = None
-    end = False
-    while not end:
-        newAssignment = generateSuccessor(currentAssignment[0], currentAssignment[1], limit)
-        # compare values from each assignment
-        if newAssignment[2] > currentAssignment[2]:
-            currentAssignment = newAssignment
-        if currentAssignment[1]:
-            bestAssignment = currentAssignment
-        else:
-            end = True
-    return bestAssignment[0], bestAssignment[3], bestAssignment[2]
+    currentWeight = currentAssignment[3]
+    currentValue = currentAssignment[2]
+
+    for i in range(100):
+
+        # generate a successor
+        successor = generateSuccessor(currentAssignment[0], currentAssignment[1], limit, currentAssignment[2], currentAssignment[3])
+        print successor
+        successorWeight = successor[3]
+        successorValue = successor[2]
+
+        # if successor has better value keep it 
+        if (successorValue > currentValue):
+            currentAssignment = successor
+            currentWeight = successorWeight
+            currentValue = successorValue
+        print 'protein (g): ', currentValue
+
+    return currentAssignment[0], currentAssignment[3], currentAssignment[2]
 
 def knapsack_sa(foods, limit):
     return None
