@@ -191,6 +191,7 @@ def knapsack_hc(foods, limit):
     currentWeight = currentAssignment[3]
     currentValue = currentAssignment[2]
 
+    # perform set number of trials
     for i in range(200):
         # generate a successor
         successor = generateSuccessor(currentAssignment[0], currentAssignment[1], limit, currentValue, currentWeight)
@@ -208,12 +209,46 @@ def knapsack_hc(foods, limit):
         print 'current value in hc: ', currentValue
         print 'current weight in HC: ', currentWeight '''
 
-    #print 'knasack using HC:', currentAssignment[0]
+    #print 'knapsack using HC:', currentAssignment[0]
     return currentAssignment[0], currentAssignment[3], currentAssignment[2]
 
 # Simulated Annealing solution
 def knapsack_sa(foods, limit):
-    return None
+    # randomly assign an initial state
+    currentAssignment = randomAssignment(foods, limit)
+    currentWeight = currentAssignment[3]
+    currentValue = currentAssignment[2]
+
+    # perform set number of trials
+    for i in range(200):
+        # generate a successor
+        successor = generateSuccessor(currentAssignment[0], currentAssignment[1], limit, currentValue, currentWeight)
+        #print successor
+        successorWeight = successor[3]
+        successorValue = successor[2]
+
+        # if successor has better value keep it 
+        if (successorValue > currentValue) and (successorWeight <= limit):
+            currentAssignment = successor
+            currentWeight = currentAssignment[3]
+            currentValue = currentAssignment[2]
+
+        # SA cooling function
+        # sometimes accept suboptimal state in attempt to 
+        # escape local maxima 
+        pick = random.randrange(1000)
+        if (pick < 10):
+            currentAssignment = successor
+            currentWeight = currentAssignment[3]
+            currentValue = currentAssignment[2]
+
+        '''
+        print 'iteration ' + str(i) + 'assignment: ', currentAssignment
+        print 'current value in hc: ', currentValue
+        print 'current weight in HC: ', currentWeight '''
+
+    #print 'knapsack using SA:', currentAssignment[0]
+    return currentAssignment[0], currentAssignment[3], currentAssignment[2]
 
 
 ##################################################################
