@@ -236,12 +236,14 @@ def knapsack_sa(foods, limit):
         # SA cooling function
         # sometimes accept suboptimal state in attempt to 
         # escape local maxima 
-        pick = random.randrange(1000)
-        if (pick < 10):
-            currentAssignment = successor
-            currentWeight = currentAssignment[3]
-            currentValue = currentAssignment[2]
-
+        else:
+            pick = random.randrange(1000)
+            #if (pick < 100):
+            #if (pick < 1000):
+            if (pick < 100):
+                currentAssignment = successor
+                currentWeight = currentAssignment[3]
+                currentValue = currentAssignment[2]
         '''
         print 'iteration ' + str(i) + 'assignment: ', currentAssignment
         print 'current value in hc: ', currentValue
@@ -294,7 +296,7 @@ for i in xrange(len(item)-4):
 #for i in range(1):
     # gradually increase trainings set
     items = item[:i+3]
-    copy_items = items
+    copy_items = list(items)
     #print 'total items: ', items
     knapsack = knapsack_dp(items, max_weight)
     #print 'optimal knapsack: ', knapsack
@@ -321,9 +323,14 @@ for i in xrange(len(item)-4):
         #print 'Running hill climbing...'
         knapsack, wt, val = knapsack_hc(items, max_weight)
         r.append(float(val)/opt_val)
+
+        # SA
+        #print 'Running hill climbing...'
+        knapsack, wt, val = knapsack_hc(copy_items, max_weight)
+        r.append(float(val)/opt_val)
         
     else:
-        r = [1.0, 1.0, 1.0, 1.0]
+        r = [1.0, 1.0, 1.0, 1.0, 1.0]
     result.append(r)
 
 print 'Done running all the algorithms'
@@ -342,7 +349,7 @@ ax.scatter(xs, [e[0] for e in result], c='c', marker='x', s=20, label='greedy(va
 ax.scatter(xs, [e[1] for e in result], c='m', marker='x', s=20, label='greedy(ratio)')
 ax.scatter(xs, [e[3] for e in result], c='r', marker='x', s=20, label='HC')
 ax.scatter(xs, [e[2] for e in result], c='b', marker='x', s=20, label='DP')
-# ax.scatter(xs, [e[4] for e in result], c='g', marker='x', s=20, label='SA')
+ax.scatter(xs, [e[4] for e in result], c='g', marker='x', s=20, label='SA')
 
 box = ax.get_position()
 ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
