@@ -19,7 +19,7 @@ import random
 
 allRestaraunts = pd.DataFrame.from_csv('data/all.csv')
 nutrient_type = 'Fat'
-nutrient_capacity = 60
+nutrient_capacity = 80
 
 ##################################################################
 ####################### HELPER FUNCTIONS #########################
@@ -304,9 +304,10 @@ ax = plt.subplot(111)
 
 
 ax.scatter(xs, [e[0] for e in result], c='c', marker='x', s=20, label='greedy(value)')
-ax.scatter(xs, [e[1] for e in result], c='b', marker='x', s=20, label='greedy(ratio)')
+ax.scatter(xs, [e[1] for e in result], c='m', marker='x', s=20, label='greedy(ratio)')
 ax.scatter(xs, [e[3] for e in result], c='r', marker='x', s=20, label='HC')
-ax.scatter(xs, [e[2] for e in result], c='g', marker='x', s=20, label='DP')
+ax.scatter(xs, [e[2] for e in result], c='b', marker='x', s=20, label='DP')
+# ax.scatter(xs, [e[4] for e in result], c='g', marker='x', s=20, label='SA')
 
 box = ax.get_position()
 ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
