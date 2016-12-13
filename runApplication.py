@@ -1,7 +1,9 @@
-# ***Temporary Title Here***
+# Optimization of Caloric and Macronutrient Intake 
+# Through Constraint Satisfaction Problems
 # A CS182 Final Project
 # Jason Cui | jasoncui@college.harvard.edu
 # Annie Hwang | annhwang@college.harvard.edu
+
 import pandas as pd
 # from constraint import *
 import numpy as np
