@@ -64,9 +64,9 @@ def randomAssignment(foods, nutrient_capacity):
 
         # check if it exceeds capacity
         if (total_weight + weight) > nutrient_capacity or not foods:
-            print 'random assignments: ', knapsack
-            print 'total fats in grams: ', total_weight
-            print 'total protein in grams: ', total_value
+            #print 'random assignments: ', knapsack
+            #print 'total fats in grams: ', total_weight
+            #print 'total protein in grams: ', total_value
             return [knapsack, foods, total_value, total_weight]
 
         # remove food from possibilities and add to bag
@@ -76,9 +76,6 @@ def randomAssignment(foods, nutrient_capacity):
             total_value += value
             total_weight += weight
 
-    #print 'random assignments: ', knapsack
-    #print 'total fats in grams: ', total_weight
-    #print 'total protein in grams: ', total_value
     return [knapsack, foods, total_value, total_weight]
 
 
@@ -93,11 +90,11 @@ def generateSuccessor(knapsack, foods, nutrient_capacity, currentValue, currentW
         value = food[2]
 
         # if possible add to knapsack
-        if (currentWeight + weight) < nutrient_capacity:
+        if (currentWeight + weight) <= nutrient_capacity:
             foods.remove(food)
             knapsack.append(food)
-            currentValue += value
-            currentWeight += weight
+            currentValue = finalValueWeight(knapsack, nutrient_capacity)[0]
+            currentWeight = finalValueWeight(knapsack, nutrient_capacity)[1]
             return [knapsack, foods, currentValue, currentWeight]
 
         # else swap with random food in knapsack
@@ -108,22 +105,20 @@ def generateSuccessor(knapsack, foods, nutrient_capacity, currentValue, currentW
             tempWeight = randomFoodInKnapsack[1]
 
             # if capacity isn't exceeded make the swap 
-            if (currentWeight - tempWeight + weight) < nutrient_capacity:
+            if (currentWeight - tempWeight + weight) <= nutrient_capacity:
 
                 # remove choice from knapsack 
                 knapsack.remove(randomFoodInKnapsack)
                 foods.append(randomFoodInKnapsack)
-                currentWeight -= tempWeight
-                currentValue -= tempValue
 
                 # add choice to knapsack 
-                currentValue += value
-                currentWeight += weight
                 foods.remove(food)
                 knapsack.append(food)
 
+                currentValue = finalValueWeight(knapsack, nutrient_capacity)[0]
+                currentWeight = finalValueWeight(knapsack, nutrient_capacity)[1]
+
                 return [knapsack, foods, currentValue, currentWeight]
-    
         return [knapsack, foods, currentValue, currentWeight]
     return [knapsack, foods, currentValue, currentWeight]
 
@@ -197,19 +192,21 @@ def knapsack_hc(foods, limit):
     currentValue = currentAssignment[2]
 
     for i in range(100):
-
         # generate a successor
-        successor = generateSuccessor(currentAssignment[0], currentAssignment[1], limit, currentAssignment[2], currentAssignment[3])
-        print successor
+        successor = generateSuccessor(currentAssignment[0], currentAssignment[1], limit, currentValue, currentWeight)
+        #print successor
         successorWeight = successor[3]
         successorValue = successor[2]
 
         # if successor has better value keep it 
-        if (successorValue > currentValue):
+        if (successorValue > currentValue) and (successorWeight <= limit):
             currentAssignment = successor
-            currentWeight = successorWeight
-            currentValue = successorValue
-        #print 'protein (g): ', currentValue
+            currentWeight = currentAssignment[3]
+            currentValue = currentAssignment[2]
+        '''
+        print 'iteration ' + str(i) + 'assignment: ', currentAssignment
+        print 'current value in hc: ', currentValue
+        print 'current weight in HC: ', currentWeight '''
 
     #print 'knasack using HC:', currentAssignment[0]
     return currentAssignment[0], currentAssignment[3], currentAssignment[2]
@@ -258,11 +255,13 @@ max_weight = nutrient_capacity
 # randomizing order of training set b/c some restaurant
 # items are better than others
 item = shuffle(item)
-for i in xrange(len(item)):
+for i in xrange(len(item)-4):
 #for i in range(1):
     # gradually increase trainings set
     items = item[:i+3]
+    #print 'total items: ', items
     knapsack = knapsack_dp(items, max_weight)
+    #print 'optimal knapsack: ', knapsack
     opt_val, opt_wt = finalValueWeight(knapsack, max_weight)
     r = []
     if opt_val != 0:
@@ -276,7 +275,10 @@ for i in xrange(len(item)):
 
         # hill climbing
         knapsack, wt, val = knapsack_hc(items, max_weight)
+        '''
         print 'knapsack for hc', knapsack
+        print 'optimal value: ', opt_val
+        print 'val:', val'''
         r.append(float(val)/opt_val)
         
         # DP
@@ -293,9 +295,9 @@ print 'Done running all the algorithms'
 ######################## PLOTTING RESULTS ########################
 ##################################################################
 
-
-#print 'Ready to plot'
-xs = xrange(len(item))
+print 'Ready to plot'
+xs = xrange(len(item)-4)
+#xs = xrange(34)
 fig = plt.figure()
 ax = plt.subplot(111)
 
