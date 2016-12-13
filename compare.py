@@ -106,7 +106,6 @@ def generateSuccessor(knapsack, foods, nutrient_capacity, currentValue, currentW
 
             # if capacity isn't exceeded make the swap 
             if (currentWeight - tempWeight + weight) <= nutrient_capacity:
-
                 # remove choice from knapsack 
                 knapsack.remove(randomFoodInKnapsack)
                 foods.append(randomFoodInKnapsack)
@@ -191,7 +190,7 @@ def knapsack_hc(foods, limit):
     currentWeight = currentAssignment[3]
     currentValue = currentAssignment[2]
 
-    for i in range(100):
+    for i in range(200):
         # generate a successor
         successor = generateSuccessor(currentAssignment[0], currentAssignment[1], limit, currentValue, currentWeight)
         #print successor
@@ -259,6 +258,7 @@ for i in xrange(len(item)-4):
 #for i in range(1):
     # gradually increase trainings set
     items = item[:i+3]
+    copy_items = items
     #print 'total items: ', items
     knapsack = knapsack_dp(items, max_weight)
     #print 'optimal knapsack: ', knapsack
@@ -266,28 +266,28 @@ for i in xrange(len(item)-4):
     r = []
     if opt_val != 0:
         # greedy using value heuristic
-        # knapsack, wt, val = knapsack_greedy(items, max_weight, value, 3)
-        # r.append(float(val)/opt_val)
+        #print 'Running greedy - value...'
+        knapsack, wt, val = knapsack_greedy(items, max_weight, value, 3)
+        r.append(float(val)/opt_val)
 
         # greedy using value/weight heuristic
-        # knapsack, wt, val = knapsack_greedy(items, max_weight, val_weight_ratio, 3)
-        # r.append(float(val)/opt_val)
+        #print 'Running greedy - value/weight ratio...'
+        knapsack, wt, val = knapsack_greedy(items, max_weight, val_weight_ratio, 3)
+        r.append(float(val)/opt_val)
+
+        # DP
+        #print 'Running dynamic programmming...'
+        knapsack = knapsack_dp(copy_items, max_weight)
+        val, wt = finalValueWeight(knapsack, max_weight)
+        r.append(float(val)/opt_val)
 
         # hill climbing
+        #print 'Running hill climbing...'
         knapsack, wt, val = knapsack_hc(items, max_weight)
-        '''
-        print 'knapsack for hc', knapsack
-        print 'optimal value: ', opt_val
-        print 'val:', val'''
         r.append(float(val)/opt_val)
         
-        # DP
-        # knapsack = knapsack_dp(items, max_weight)
-        # val, wt = finalValueWeight(knapsack, max_weight)
-        # r.append(float(val)/opt_val)
     else:
-        #r = [1.0, 1.0, 1.0]
-        r = [1.0]
+        r = [1.0, 1.0, 1.0, 1.0]
     result.append(r)
 
 print 'Done running all the algorithms'
@@ -301,18 +301,16 @@ xs = xrange(len(item)-4)
 fig = plt.figure()
 ax = plt.subplot(111)
 
-print len(xs)
-print len(result)
 
-ax.scatter(xs, [e[0] for e in result], c='r', marker='x', s=20, label='HC')
+ax.scatter(xs, [e[0] for e in result], c='c', marker='x', s=20, label='greedy(value)')
+ax.scatter(xs, [e[1] for e in result], c='b', marker='x', s=20, label='greedy(ratio)')
+ax.scatter(xs, [e[3] for e in result], c='r', marker='x', s=20, label='HC')
+ax.scatter(xs, [e[2] for e in result], c='g', marker='x', s=20, label='DP')
+
+box = ax.get_position()
+ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
-# ax.scatter(xs, [e[0] for e in result], c='r', marker='x', s=20, label='greedy - value')
-# ax.scatter(xs, [e[1] for e in result], c='b', marker='x', s=20, label='greedy - ratio')
-# ax.scatter(xs, [e[2] for e in result], c='g', marker='x', s=20, label='dp')
-# box = ax.get_position()
-# ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
-# ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-# plt.show()
 
 ##################################################################
 ################# PRINTING AVERAGES OF RESULTS ###################
