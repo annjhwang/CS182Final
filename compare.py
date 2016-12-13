@@ -123,12 +123,9 @@ def generateSuccessor(knapsack, foods, nutrient_capacity, currentValue, currentW
                 knapsack.append(food)
 
                 return [knapsack, foods, currentValue, currentWeight]
-<<<<<<< HEAD
-        
-=======
+
     
         return [knapsack, foods, currentValue, currentWeight]
->>>>>>> origin/master
     return [knapsack, foods, currentValue, currentWeight]
 
 ##################################################################
